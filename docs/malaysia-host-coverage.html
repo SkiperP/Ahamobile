@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Покрытие хостов и регистрация prepaid — Fingular Malaysia</title>
+  <style>
+    :root {
+      --ink: #1c1917;
+      --muted: #57534e;
+      --faint: #a8a29e;
+      --line: #e7e5e4;
+      --paper: #fafaf9;
+      --card: #ffffff;
+      --bar: #44403c;
+      --bar-b: #a8a29e;
+      --mark: #1c1917;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    header, main, footer { width: min(980px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 48px 0 12px; }
+    h1 { font-size: 34px; line-height: 1.2; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.02em; }
+    h2 { font-size: 24px; line-height: 1.25; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.015em; }
+    h3 { font-size: 18px; margin: 0 0 8px; font-weight: 600; }
+    p { margin: 0 0 12px; }
+    .lede { font-size: 20px; }
+    .meta, .note, figcaption, footer { color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; line-height: 1.45; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 8px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; }
+    nav a { text-decoration: none; border: 1px solid var(--line); background: var(--card); padding: 6px 10px; border-radius: 999px; }
+    section { padding: 28px 0; border-top: 1px solid var(--line); }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
+    .stat { background: var(--card); border: 1px solid var(--line); padding: 14px 14px 12px; }
+    .stat b { display: block; font-size: 28px; line-height: 1.1; font-weight: 600; letter-spacing: -0.03em; }
+    .stat span { display: block; margin-top: 6px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; }
+    .callout { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--ink); padding: 14px 16px; margin: 14px 0; }
+    figure { margin: 16px 0 8px; }
+    .legend { display: flex; gap: 16px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; background: var(--bar-b); }
+    .sw.b { background: var(--bar); }
+    .row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: center; margin: 7px 0; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; }
+    .bars { display: grid; gap: 3px; }
+    .track { display: grid; grid-template-columns: 1fr 72px; gap: 8px; align-items: center; }
+    .track i { display: block; height: 10px; background: var(--line); }
+    .track i span { display: block; height: 10px; background: var(--bar-b); }
+    .track.now i span { background: var(--bar); }
+    .track em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; margin: 12px 0; }
+    th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th:first-child, td:first-child { text-align: left; }
+    th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: 0.02em; }
+    .hosts { display: grid; gap: 12px; }
+    article.host { background: var(--card); border: 1px solid var(--line); padding: 16px 16px 8px; }
+    article.host h3 { font-size: 20px; }
+    .role { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+    ul { margin: 0 0 12px; padding-left: 1.2em; }
+    li { margin: 0 0 6px; }
+    footer { padding: 8px 0 48px; }
+    footer ol { padding-left: 1.2em; }
+    footer li { margin: 0 0 6px; }
+    @media (max-width: 800px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      h1 { font-size: 28px; }
+      .row { grid-template-columns: 1fr; gap: 2px; }
+      table { display: block; overflow-x: auto; }
+    }
+    @media print {
+      nav { display: none; }
+      body { background: white; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="meta">Fingular Malaysia · витрина AhaPay · срез 25 октября 2026, Europe/Moscow</p>
+    <h1>Покрытие хостов и регистрация prepaid</h1>
+    <p class="lede">Страница собирает покрытие пяти национальных сетей и правила, по которым человек оформляет малайзийский prepaid. Покрытие нужно, чтобы сравнить U Mobile и CelcomDigi до term sheet. Правила регистрации нужны, чтобы экран AhaPay запрашивал документы и согласие, которые требуют MCMC и потребительский кодекс.</p>
+    <nav>
+      <a href="#scales">Шкалы</a>
+      <a href="#geo">География</a>
+      <a href="#fiveg">5G</a>
+      <a href="#kl">Куала-Лумпур</a>
+      <a href="#copa">Штаты U Mobile</a>
+      <a href="#hosts">Хосты</a>
+      <a href="#sim">Регистрация SIM</a>
+      <a href="#contract">Договор</a>
+    </nav>
+  </header>
+  <main>
+    <section id="scales">
+      <h2>Две шкалы покрытия</h2>
+      <p>Операторы публикуют Coverage of Populated Areas, CoPA, по своей методике. Opensignal публикует Coverage Experience по одной шкале от 0 до 10 для всех пяти сетей. CoPA показывает, какую долю населённых районов оператор сам считает покрытой. Coverage Experience показывает, встречают ли абоненты сеть в населённых местах, где они живут и ездят. Эти числа стоят в одном отчёте и отвечают на разные вопросы.</p>
+      <div class="stats">
+        <div class="stat"><b>8,8</b><span>География CelcomDigi, шкала 0–10, июль 2026</span></div>
+        <div class="stat"><b>5,6</b><span>География U Mobile. Полгода назад было 5,5</span></div>
+        <div class="stat"><b>75,7%</b><span>Доля времени на 5G у U Mobile в Куала-Лумпуре</span></div>
+        <div class="stat"><b>90%</b><span>5G CoPA U Mobile, заявление компании от 6 октября 2026</span></div>
+      </div>
+      <div class="callout">
+        <p>В сборе Opensignal с 1 апреля по 29 июня 2026 все пять операторов получали 5G через DNB, поэтому балл покрытия 5G у всех равен 3,75. Opensignal пишет, что U Mobile завершил выход из DNB в июле 2026, после конца этого окна. Балл 3,75 относится к периоду общего доступа через DNB. Замер собственного контура ULTRA5G в это окно не попал.</p>
+        <p>С ноября 2025 по июль 2026 географический балл U Mobile вырос с 5,5 до 5,6. CelcomDigi за тот же срок стоит на 8,8. Стройка ULTRA5G добавила скорость и долю времени на 5G внутри уже населённого контура.</p>
+      </div>
+    </section>
+
+    <section id="geo">
+      <h2>География населённых мест</h2>
+      <p>Шкала нужна, чтобы увидеть, у кого сеть шире за пределами больших городов. Для номера, которым человек пользуется по всей Малайзии, этот балл важнее городской скорости.</p>
+      <figure>
+        <div class="legend"><span><i class="sw"></i>Ноябрь 2025</span><span><i class="sw b"></i>Июль 2026</span></div>
+        <div class="row"><div>CelcomDigi</div><div class="bars"><div class="track"><i><span style="width:85%"></span></i><em>8,5</em></div><div class="track now"><i><span style="width:88%"></span></i><em>8,8</em></div></div></div>
+        <div class="row"><div>Maxis</div><div class="bars"><div class="track"><i><span style="width:69%"></span></i><em>6,9</em></div><div class="track now"><i><span style="width:70%"></span></i><em>7,0</em></div></div></div>
+        <div class="row"><div>U Mobile</div><div class="bars"><div class="track"><i><span style="width:55%"></span></i><em>5,5</em></div><div class="track now"><i><span style="width:56%"></span></i><em>5,6</em></div></div></div>
+        <div class="row"><div>Unifi</div><div class="bars"><div class="track"><i><span style="width:42%"></span></i><em>4,2</em></div><div class="track now"><i><span style="width:44%"></span></i><em>4,4</em></div></div></div>
+        <div class="row"><div>Yes</div><div class="bars"><div class="track"><i><span style="width:39%"></span></i><em>3,9</em></div><div class="track now"><i><span style="width:41%"></span></i><em>4,1</em></div></div></div>
+        <figcaption>Ось значений: Coverage Experience, баллы от 0 до 10. Длина полосы — доля от 10. Источник: Opensignal, сборы 1 августа — 29 октября 2025 и 1 апреля — 29 июня 2026.</figcaption>
+      </figure>
+    </section>
+
+    <section id="fiveg">
+      <h2>Доля времени на 5G</h2>
+      <p>Метрика считает пользователей с телефоном 5G и планом 5G. В Куала-Лумпуре у большой тройки телефон и так почти всё время в сети, от 98,1% до 98,8%. Разница города видна здесь.</p>
+      <figure>
+        <div class="legend"><span><i class="sw"></i>Страна</span><span><i class="sw b"></i>Куала-Лумпур</span></div>
+        <div class="row"><div>CelcomDigi</div><div class="bars"><div class="track"><i><span style="width:48.9%"></span></i><em>48,9%</em></div><div class="track now"><i><span style="width:63.5%"></span></i><em>63,5%</em></div></div></div>
+        <div class="row"><div>Maxis</div><div class="bars"><div class="track"><i><span style="width:53.2%"></span></i><em>53,2%</em></div><div class="track now"><i><span style="width:63.4%"></span></i><em>63,4%</em></div></div></div>
+        <div class="row"><div>U Mobile</div><div class="bars"><div class="track"><i><span style="width:66.6%"></span></i><em>66,6%</em></div><div class="track now"><i><span style="width:75.7%"></span></i><em>75,7%</em></div></div></div>
+        <div class="row"><div>Unifi</div><div class="bars"><div class="track"><i><span style="width:50.7%"></span></i><em>50,7%</em></div><div class="track now"><i><span style="width:60.3%"></span></i><em>60,3%</em></div></div></div>
+        <div class="row"><div>Yes</div><div class="bars"><div class="track"><i><span style="width:54.4%"></span></i><em>54,4%</em></div><div class="track now"><i><span style="width:70.1%"></span></i><em>70,1%</em></div></div></div>
+        <figcaption>Ось значений: доля времени на 5G, проценты, шкала до 100. Источник: Opensignal, 1 апреля — 29 июня 2026.</figcaption>
+      </figure>
+      <h3>Скорость скачивания на 5G в Куала-Лумпуре</h3>
+      <figure>
+        <div class="row"><div>CelcomDigi</div><div class="bars"><div class="track now"><i><span style="width:59.9%"></span></i><em>167,6</em></div></div></div>
+        <div class="row"><div>Maxis</div><div class="bars"><div class="track now"><i><span style="width:65.2%"></span></i><em>182,5</em></div></div></div>
+        <div class="row"><div>U Mobile</div><div class="bars"><div class="track now"><i><span style="width:96.8%"></span></i><em>271,1</em></div></div></div>
+        <div class="row"><div>Unifi</div><div class="bars"><div class="track now"><i><span style="width:68.8%"></span></i><em>192,6</em></div></div></div>
+        <div class="row"><div>Yes</div><div class="bars"><div class="track now"><i><span style="width:64.1%"></span></i><em>179,5</em></div></div></div>
+        <figcaption>Ось значений: мегабиты в секунду. Длина полосы — доля от 280. Общее скачивание в городе, все технологии: U Mobile 122,4, Unifi 93,8, Maxis 84,4, CelcomDigi 83,1, Yes 70,9. Источник: Opensignal, Куала-Лумпур, апрель–июнь 2026.</figcaption>
+      </figure>
+    </section>
+
+    <section id="kl">
+      <h2>Опыт в Куала-Лумпуре</h2>
+      <p>В городе запуска большая тройка держит надёжность в коридоре 900–912 баллов из 1000. Качество типичных приложений у CelcomDigi и U Mobile совпадает, 76,4% тестов. Yes дольше всех держит телефон на сигнале и при этом отстаёт по качеству приложений и по отдаче.</p>
+      <table>
+        <caption class="note">Куала-Лумпур, Opensignal, сбор 1 апреля — 29 июня 2026. Reliability — шкала от 100 до 1000.</caption>
+        <thead>
+          <tr><th>Метрика</th><th>CelcomDigi</th><th>Maxis</th><th>U Mobile</th><th>Unifi</th><th>Yes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Время на сети, %</td><td>98,8</td><td>98,6</td><td>98,1</td><td>98,8</td><td>99,3</td></tr>
+          <tr><td>Время на 5G, %</td><td>63,5</td><td>63,4</td><td>75,7</td><td>60,3</td><td>70,1</td></tr>
+          <tr><td>Скачивание, Мбит/с</td><td>83,1</td><td>84,4</td><td>122,4</td><td>93,8</td><td>70,9</td></tr>
+          <tr><td>Скачивание 5G, Мбит/с</td><td>167,6</td><td>182,5</td><td>271,1</td><td>192,6</td><td>179,5</td></tr>
+          <tr><td>Отдача, Мбит/с</td><td>21,5</td><td>21,5</td><td>21,8</td><td>16,3</td><td>11,1</td></tr>
+          <tr><td>Отдача 5G, Мбит/с</td><td>35,3</td><td>34,3</td><td>36,0</td><td>30,1</td><td>26,4</td></tr>
+          <tr><td>Consistent Quality, %</td><td>76,4</td><td>70,6</td><td>76,4</td><td>63,0</td><td>55,9</td></tr>
+          <tr><td>Reliability, баллы</td><td>912</td><td>900</td><td>906</td><td>899</td><td>858</td></tr>
+        </tbody>
+      </table>
+      <p>В Селангоре за тот же сбор время на 5G составляет 71,9% у U Mobile, 61,2% у Yes, 58,2% у Maxis, 56,6% у CelcomDigi и 53,7% у Unifi. Скачивание на 5G: U Mobile 273,6 Мбит/с, Unifi 212,5, Maxis 194,5, Yes 193,9, CelcomDigi 180,6. Качество приложений: CelcomDigi 75,6% и U Mobile 75,0%.</p>
+    </section>
+
+    <section id="copa">
+      <h2>5G CoPA U Mobile по штатам</h2>
+      <p>Таблица относится к 31 марта 2026. В этот день у компании было 82,9% CoPA и 6 737 сайтов. 6 октября 2026 компания объявила 90% по стране и штатную таблицу заново не опубликовала. Мартовские Сабах и Саравак по октябрьской цифре закрытыми считать нельзя. Методика CoPA принадлежит U Mobile. Рядом с баллом Opensignal она не складывается.</p>
+      <figure>
+        <div class="row"><div>Путраджая</div><div class="bars"><div class="track now"><i><span style="width:99.9%"></span></i><em>99,9%</em></div></div></div>
+        <div class="row"><div>Пенанг</div><div class="bars"><div class="track now"><i><span style="width:99.1%"></span></i><em>99,1%</em></div></div></div>
+        <div class="row"><div>Куала-Лумпур</div><div class="bars"><div class="track now"><i><span style="width:98.6%"></span></i><em>98,6%</em></div></div></div>
+        <div class="row"><div>Лабуан</div><div class="bars"><div class="track now"><i><span style="width:96%"></span></i><em>96%</em></div></div></div>
+        <div class="row"><div>Селангор</div><div class="bars"><div class="track now"><i><span style="width:95.2%"></span></i><em>95,2%</em></div></div></div>
+        <div class="row"><div>Малакка</div><div class="bars"><div class="track now"><i><span style="width:92.6%"></span></i><em>92,6%</em></div></div></div>
+        <div class="row"><div>Перлис</div><div class="bars"><div class="track now"><i><span style="width:91.9%"></span></i><em>91,9%</em></div></div></div>
+        <div class="row"><div>Джохор</div><div class="bars"><div class="track now"><i><span style="width:86.4%"></span></i><em>86,4%</em></div></div></div>
+        <div class="row"><div>Тренгану</div><div class="bars"><div class="track now"><i><span style="width:85.5%"></span></i><em>85,5%</em></div></div></div>
+        <div class="row"><div>Перак</div><div class="bars"><div class="track now"><i><span style="width:81.3%"></span></i><em>81,3%</em></div></div></div>
+        <div class="row"><div>Негери-Сембилан</div><div class="bars"><div class="track now"><i><span style="width:80.8%"></span></i><em>80,8%</em></div></div></div>
+        <div class="row"><div>Кедах</div><div class="bars"><div class="track now"><i><span style="width:77.2%"></span></i><em>77,2%</em></div></div></div>
+        <div class="row"><div>Келантан</div><div class="bars"><div class="track now"><i><span style="width:75.9%"></span></i><em>75,9%</em></div></div></div>
+        <div class="row"><div>Паханг</div><div class="bars"><div class="track now"><i><span style="width:72.8%"></span></i><em>72,8%</em></div></div></div>
+        <div class="row"><div>Сабах</div><div class="bars"><div class="track now"><i><span style="width:62.1%"></span></i><em>62,1%</em></div></div></div>
+        <div class="row"><div>Саравак</div><div class="bars"><div class="track now"><i><span style="width:58.7%"></span></i><em>58,7%</em></div></div></div>
+        <figcaption>Ось значений: 5G CoPA, проценты, шкала до 100. Заявление U Mobile на 31 марта 2026, пересказ SoyaCincau от 7 апреля 2026. Indoor к 6 октября 2026: больше 250 площадок, годовой план in-building компания считает выполненным.</figcaption>
+      </figure>
+      <p>Сеть ULTRA5G строится с июля 2025. На западе страны оборудование Huawei, на востоке ZTE. Развёртывание шло на 100 МГц среднего диапазона. Контур DNB строился на 200 МГц среднего диапазона и на 700 МГц. Digital News Asia пишет, что U Mobile просит дополнительный спектр на случай, когда упрётся ёмкость.</p>
+    </section>
+
+    <section id="hosts">
+      <h2>Что каждый хост даёт запуску</h2>
+      <p>В запуске один хост и один адаптер. Сравнение ниже нужно для двух term sheet. U Mobile закрывает скорость 5G в Куала-Лумпуре и Селангоре и уже продаёт доступ чужим брендам. CelcomDigi закрывает ширину карты и готовую фабрику MVNO.</p>
+      <div class="hosts">
+        <article class="host">
+          <h3>U Mobile</h3>
+          <p class="role">Первый term sheet</p>
+          <p>В Куала-Лумпуре телефон на 5G 75,7% времени, скачивание на 5G 271,1 Мбит/с. В Селангоре 71,9% и 273,6 Мбит/с. На март 2026 CoPA в этих двух территориях был 98,6% и 95,2%. Качество приложений в городе совпадает с CelcomDigi. Надёжность 906 баллов при 912 у CelcomDigi. С июля 2026 радиосеть 5G принадлежит самой компании: выход из оптового DNB завершён. Договоры Eastel, VIBE и TM уже включают 5G.</p>
+          <p>Географический балл остаётся 5,6 при 8,8 у CelcomDigi. На 31 марта Сабах был на 62,1% CoPA, Саравак на 58,7%. После объявления 90% по стране компания следующим шагом называет indoor. Оптовая фабрика моложе фабрики CelcomDigi: публичный light-образец — VIBE.</p>
+        </article>
+        <article class="host">
+          <h3>CelcomDigi</h3>
+          <p class="role">Второй term sheet</p>
+          <p>Самая широкая карта, 8,8 балла. 4G LTE закрывает 97,9% населения, LTE-Advanced около 95–95,6%. В Куала-Лумпуре надёжность лучшая, 912 баллов, качество приложений 76,4%. В Сабахе качество приложений тоже лучшее среди пяти, 66,7%. На сети уже живут Tune Talk, redONE, XOX и Merchantrade.</p>
+          <p>В окне апреля–июня 5G шёл через DNB. В Куала-Лумпуре время на 5G 63,5%, скачивание 167,6 Мбит/с. Оптовая цена будет учитывать собственный prepaid и Spark. Ценовой потолок remedy слияния к октябрю 2026 лучше считать истёкшим, пока нет письменного продления. После ухода U Mobile у DNB появился запас спектра для оставшихся операторов. Opensignal пишет, что их баллы 5G могут вырасти в следующих замерах.</p>
+        </article>
+        <article class="host">
+          <h3>Maxis</h3>
+          <p class="role">Третий лист, если нужен более широкий 4G</p>
+          <p>География 7,0. Годовой отчёт даёт 96,9% населения на 4G LTE и больше 11 800 сайтов. В Куала-Лумпуре надёжность 900 баллов, время на 5G 63,4%, скачивание на 5G 182,5 Мбит/с. Компания уже провела MVNO CMLink с несколькими номерами на одной SIM. Маркетинговая страница говорит, что в сельской местности основной сетью остаётся 4G.</p>
+          <p>Открытой полки для чужого финтех-бренда в публичных сделках нет. Розничный postpaid ARPU во втором квартале 2025 был RM64. Массовый дешёвый prepaid на этой сети конкурирует с собственной базой.</p>
+        </article>
+        <article class="host">
+          <h3>Yes</h3>
+          <p class="role">Справочная сеть. Публичного приёма MVNO в срезе нет</p>
+          <p>География самая узкая, 4,1 балла. Время на сети самое высокое: 99,1% по стране и 99,3% в Куала-Лумпуре. В городе время на 5G второе, 70,1%. Качество приложений 55,9%, отдача 11,1 Мбит/с. Сеть исторически работает как all-IP 4G. 5G и 5G Advanced идут через DNB. Публичной программы приёма MVNO в срезе 2025–2026 нет.</p>
+        </article>
+        <article class="host">
+          <h3>Unifi Mobile</h3>
+          <p class="role">Справочная сеть. 5G с 31 июля 2026 идёт по радио U Mobile</p>
+          <p>География 4,4. Время на сети в Куала-Лумпуре 98,8%. Opensignal отдаёт Unifi видео, игры и голосовые приложения. С 31 июля 2026 5G Unifi — радиосеть U Mobile по договору MOCN на три года. Договор с Unifi на эту радиосеть добавляет вторую оптовую ступень. Публичного приёма нового MVNO в срезе нет.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <h3>Что спросить в двух term sheet</h3>
+        <p>В опрос U Mobile и CelcomDigi входят четыре пункта покрытия. Какое определение CoPA попадёт в SLA: улица или indoor и какой порог сигнала. Какая карта Куала-Лумпура, Селангора, Сабаха и Саравака действует на дату договора. Входит ли 5G в оптовую цену плана. Что видит абонент за краем 5G: 4G того же хоста, национальный роуминг или отказ в обслуживании.</p>
+      </div>
+    </section>
+
+    <section id="sim">
+      <h2>Регистрация prepaid SIM и eSIM</h2>
+      <p>Правила задаёт Commission Determination on the Mandatory Standards for the Registration of End-Users of Prepaid Public Cellular Services, Determination No. 1 of 2026. MCMC зарегистрировал его 26 февраля 2026. Состав ниже взят из FAQ MCMC к этому определению и из отчёта public inquiry от 27 января 2026. PDF определения построчно здесь не цитируется. В отчёте inquiry комиссия закладывала шесть месяцев на подготовку операторов с даты выпуска. Стандарт относится к prepaid. Отдельного стандарта регистрации postpaid 2026 года в этом срезе нет.</p>
+      <h3>Какие документы приносит человек</h3>
+      <p>Нужен оригинал документа. Копия, фотография и принесённый скан вместо документа регистрацию не проходят. Человек оформляет линию сам. За взрослого это не делает другой человек. Ребёнка младше 12 лет зарегистрировать нельзя. В возрасте 12–17 лет линию оформляет родитель или опекун, ребёнок присутствует, пользователем в записи остаётся ребёнок. Приложение AhaPay отмечено 18+, поэтому детский контур в витрину не входит.</p>
+      <table>
+        <thead><tr><th>Кто</th><th>Оригинал документа</th></tr></thead>
+        <tbody>
+          <tr><td>Гражданин Малайзии</td><td>MyKad или MyTentera</td></tr>
+          <tr><td>Постоянный резидент</td><td>MyPR</td></tr>
+          <tr><td>Временный резидент</td><td>MyKAS</td></tr>
+          <tr><td>Иностранец, работа или учёба</td><td>Паспорт и разрешение на работу либо студенческий пропуск</td></tr>
+          <tr><td>Турист, визит короче трёх месяцев</td><td>Паспорт и виза, если виза нужна</td></tr>
+          <tr><td>Держатель IMM13</td><td>Оригинал IMM13, заверенный иммиграционной службой</td></tr>
+          <tr><td>Держатель документа беженца</td><td>Оригинал Dokumen Pendaftaran Pelarian</td></tr>
+        </tbody>
+      </table>
+      <h3>Как проходит проверка</h3>
+      <p>В салоне или у уполномоченного дилера гражданин, постоянный и временный резидент проходят считыватель MyKad и биометрию по отпечатку. Если отпечаток снять нельзя по медицинской причине, отчёт inquiry допускает сведения с чипа документа, заверенные Национальным регистрационным департаментом. Иностранец проходит считыватель паспорта и биометрию по лицу. Самостоятельную регистрацию иностранца комиссия на этом этапе не разрешает.</p>
+      <p>Самостоятельная регистрация в FAQ описана как сканирование документа и проверка личности через MyDigital ID. В отчёте inquiry она выполняется только на официальной платформе оператора. Дилер в киоске помогает пройти шаги на экране. Проверку личности выполняет MyDigital ID или считыватель документа. Снимок документа хранится и после салонной, и после самостоятельной регистрации. Копия помечается водяным знаком и для другой регистрации не используется.</p>
+      <h3>Сколько линий и как быстро они включаются</h3>
+      <p>Гражданин, постоянный и временный резидент могут держать не больше пяти prepaid SIM у одного оператора. Иностранец — не больше двух у одного оператора. FAQ оставляет в силе линии, оформленные сверх лимита до вступления стандарта. На сайте MCMC остаётся более ранняя страница с формулировкой «пять SIM на клиента». Для экрана AhaPay ориентир — FAQ 2026 года, а точную фразу лимита стоит сверить в тексте определения до отказа на шестой линии. Туристическая SIM работает не дольше трёх месяцев и затем отключается. Статус регистрации сообщают в течение 12 часов. Линия, которая уже активна до регистрации, стандартом не допускается. Если документ не прошёл проверку, услугу не включают. Оператор даёт бесплатный способ посмотреть все активные prepaid, записанные на этот документ.</p>
+      <h3>Как это относится к eSIM</h3>
+      <p>FAQ говорит о prepaid SIM card и отдельно слово eSIM не разбирает. В public inquiry TM Tech написал, что предложенное определение SIM Card покрывает пластиковую карту и eSIM. Комиссия оставила интерпретации, с которыми согласились в том числе TM Tech, U Mobile, XOX и YTL. Отдельного порядка для eSIM FAQ не публикует. Для малайзийского prepaid-номера последовательность одна: сначала регистрация человека, затем активация профиля. Профиль, который работает до регистрации, попадает под запрет заранее активированных SIM.</p>
+      <p>С 1 сентября по 30 октября 2026 MCMC собирает мнения об иностранном роуминговом доступе, в том числе через eSIM. Это контур чужого IMSI. Домашний номер на сети малайзийского хоста к этой консультации не относится. Требование MyDigital ID у бренда Spark совпадает с самостоятельной регистрацией из FAQ: проверка личности идёт через MyDigital ID на платформе оператора.</p>
+    </section>
+
+    <section id="contract">
+      <h2>Договор в приложении</h2>
+      <p>Абонентский договор — коммерческая сделка о поставке услуги связи. Electronic Commerce Act 2006 признаёт оферту и акцепт электронным сообщением. Договор не теряет силу от того, что его заключили электронно. Закон не распространяется на доверенность, завещание, создание траста и оборотный документ. Абонентский договор в этот список не входит. Человек принимает электронный способ своим поведением. Кнопка согласия в приложении это поведение записывает.</p>
+      <p>Если для документа закон требует подпись, раздел 9 того же закона закрывает её электронной подписью. Подпись связана с текстом, называет человека, показывает согласие и по надёжности соответствует цели сделки. Средство подписи находится под контролем этого человека. Позднее изменение подписи и текста можно обнаружить. Digital Signature Act 1997 действует, когда использована цифровая подпись с сертификатом. Для акцепта тарифа в приложении сертификат этого закона в Act 658 не назван обязательным. MyDigital ID в стандарте MCMC проверяет личность при самостоятельной регистрации. Согласие с текстом тарифа остаётся вторым действием, даже если оба шага стоят на одном экране.</p>
+      <h3>Что человек видит в условиях</h3>
+      <p>General Consumer Code требует до договора собрать сведения, которые требуют закон и стандарты, и объяснить обязанности человека и последствия нарушения. Условия пишутся простым языком. В них есть имя стороны договора, дата начала, срок и порядок выхода, описание услуги, плата и прочие списания, способы и сроки оплаты, ограничения пользования, отключение и повторное включение, возврат депозита, случаи ограничения и приостановки, порядок изменения условий. После согласия условия отдают в разумный срок. Если в момент нажатия письменного текста ещё не было, письменный экземпляр передаётся следом. Файл в приложении кодекс считает письменным экземпляром.</p>
+      <p>Если изменение повышает плату или существенно ухудшает услугу, предупреждение даётся не меньше чем за 15 рабочих дней. До вступления изменения человек может выйти из договора без платы за этот выход, кроме попутных расходов. Это право сохраняется, пока он прямо не согласился с изменением или не продолжил пользоваться услугой после уведомления. Уведомление можно отдать в приложении, на цифровой платформе или по электронной почте.</p>
+      <h3>Что собирается на экране AhaPay</h3>
+      <p>Взрослый гражданин в приложении приносит оригинал MyKad, учётную запись MyDigital ID и проходит шаг сам. Если план выпускает eSIM, телефон поддерживает eSIM. До оплаты на экране видны сторона договора, дата начала, срок, цена, способ отказа и случаи отключения. После согласия приложение хранит ту версию текста, с которой человек согласился, и запись, кто и когда нажал. Шестая prepaid-линия у того же оператора в лимит FAQ не входит. Профиль включается после успешной проверки, статус показывается в пределах 12 часов. Для иностранца комиссия оставляет салон: паспорт, биометрия по лицу и, для работы или учёбы, документ статуса.</p>
+    </section>
+  </main>
+  <footer>
+    <h2>Источники</h2>
+    <ol>
+      <li>Opensignal, Malaysia Mobile Network Experience, июль 2026, сбор 1 апреля — 29 июня 2026.</li>
+      <li>Opensignal, Malaysia Mobile Network Experience, ноябрь 2025, сбор 1 августа — 29 октября 2025.</li>
+      <li>U Mobile, 90% 5G CoPA, 6 октября 2026. Штатная таблица на 31 марта 2026 приведена по пересказу запуска от 7 апреля 2026.</li>
+      <li>MCMC, FAQ к Determination No. 1 of 2026: FAQ_English_3.pdf. Извещение MCMC от 26 февраля 2026. Отчёт public inquiry от 27 января 2026. Заявление MCMC от 26 февраля 2026.</li>
+      <li>MCMC, консультация по роуминговому доступу и eSIM, 1 сентября — 30 октября 2026.</li>
+      <li>General Consumer Code of Practice, вторая редакция, разделы 4.1–4.5.</li>
+      <li>Electronic Commerce Act 2006, Act 658, разделы 2, 3, 7, 9 и Schedule.</li>
+    </ol>
+    <p>Оптовые ставки, minimum volume и спецификация API хоста в открытых источниках отсутствуют. Страница их не восстанавливает.</p>
+  </footer>
+</body>
+</html>
