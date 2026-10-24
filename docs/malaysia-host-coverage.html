@@ -7,14 +7,14 @@
   <style>
     :root {
       --ink: #1c1917;
-      --muted: #57534e;
-      --faint: #a8a29e;
-      --line: #e7e5e4;
+      --muted: #44403c;
+      --line: #d6d3d1;
       --paper: #fafaf9;
       --card: #ffffff;
-      --bar: #44403c;
+      --bar: #292524;
       --bar-b: #a8a29e;
-      --mark: #1c1917;
+      --space: 8px;
+      --font: Inter, "Source Sans 3", "Noto Sans", "Liberation Sans", sans-serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -22,70 +22,121 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 18px;
-      line-height: 1.5;
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 400;
     }
     a { color: inherit; }
-    header, main, footer { width: min(980px, calc(100% - 32px)); margin: 0 auto; }
-    header { padding: 48px 0 12px; }
-    h1 { font-size: 34px; line-height: 1.2; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.02em; }
-    h2 { font-size: 24px; line-height: 1.25; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.015em; }
-    h3 { font-size: 18px; margin: 0 0 8px; font-weight: 600; }
-    p { margin: 0 0 12px; }
-    .lede { font-size: 20px; }
-    .meta, .note, figcaption, footer { color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; line-height: 1.45; }
-    nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 8px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; }
-    nav a { text-decoration: none; border: 1px solid var(--line); background: var(--card); padding: 6px 10px; border-radius: 999px; }
-    section { padding: 28px 0; border-top: 1px solid var(--line); }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
-    .stat { background: var(--card); border: 1px solid var(--line); padding: 14px 14px 12px; }
-    .stat b { display: block; font-size: 28px; line-height: 1.1; font-weight: 600; letter-spacing: -0.03em; }
-    .stat span { display: block; margin-top: 6px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; }
-    .callout { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--ink); padding: 14px 16px; margin: 14px 0; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      background: var(--card);
+      padding: 8px 12px;
+      z-index: 4;
+    }
+    .skip:focus { top: 12px; }
+    header, main, footer { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 40px 0 0; }
+    h1 { font-size: 32px; line-height: 1.2; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.02em; }
+    h2 { font-size: 22px; line-height: 1.25; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.015em; }
+    h3 { font-size: 16px; line-height: 1.35; margin: 20px 0 8px; font-weight: 600; }
+    p, .lede { max-width: 68ch; margin: 0 0 12px; }
+    .lede { font-size: 18px; line-height: 1.45; }
+    .meta, .note, figcaption { color: var(--muted); font-size: 13px; line-height: 1.45; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      gap: 4px;
+      margin: 20px 0 0;
+      padding: 8px 0;
+      background: var(--paper);
+      overflow-x: auto;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    nav a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover { border-bottom-color: var(--line); }
+    section { padding: 28px 0 8px; border-top: 1px solid var(--line); }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px 24px;
+      margin: 20px 0 8px;
+      padding: 4px 0 8px;
+    }
+    .summary div { min-width: 0; }
+    .summary dt {
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+    .summary dd { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+    .callout { border-left: 3px solid var(--ink); padding: 4px 0 4px 16px; margin: 16px 0; }
+    .callout p:last-child { margin-bottom: 0; }
     figure { margin: 16px 0 8px; }
-    .legend { display: flex; gap: 16px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-    .sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; background: var(--bar-b); }
+    .legend { display: flex; gap: 16px; font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+    .sw { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; background: var(--bar-b); }
     .sw.b { background: var(--bar); }
-    .row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: center; margin: 7px 0; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; }
-    .bars { display: grid; gap: 3px; }
-    .track { display: grid; grid-template-columns: 1fr 72px; gap: 8px; align-items: center; }
-    .track i { display: block; height: 10px; background: var(--line); }
-    .track i span { display: block; height: 10px; background: var(--bar-b); }
+    .row { display: grid; grid-template-columns: 10.5rem 1fr; gap: 12px; align-items: center; margin: 8px 0; font-size: 14px; }
+    .bars { display: grid; gap: 4px; }
+    .track { display: grid; grid-template-columns: 1fr 4.5rem; gap: 8px; align-items: center; }
+    .track i { display: block; height: 12px; background: #e7e5e4; }
+    .track i span { display: block; height: 12px; background: var(--bar-b); }
     .track.now i span { background: var(--bar); }
-    .track em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; }
-    table { width: 100%; border-collapse: collapse; background: var(--card); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; margin: 12px 0; }
+    .track em { font-style: normal; color: var(--ink); font-variant-numeric: tabular-nums; font-size: 13px; }
+    .table-scroll { overflow-x: auto; margin: 12px 0 4px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+    caption { caption-side: bottom; text-align: left; padding-top: 8px; color: var(--muted); font-size: 13px; }
     th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
     th:first-child, td:first-child { text-align: left; }
-    th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: 0.02em; }
-    .hosts { display: grid; gap: 12px; }
-    article.host { background: var(--card); border: 1px solid var(--line); padding: 16px 16px 8px; }
-    article.host h3 { font-size: 20px; }
-    .role { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; color: var(--muted); margin: 0 0 8px; }
-    ul { margin: 0 0 12px; padding-left: 1.2em; }
-    li { margin: 0 0 6px; }
-    footer { padding: 8px 0 48px; }
+    th { font-weight: 600; color: var(--muted); font-size: 12px; }
+    table.docs { min-width: 32rem; }
+    table.docs th, table.docs td { text-align: left; }
+    table.metrics { min-width: 40rem; }
+    .hosts { display: grid; gap: 16px; margin-top: 8px; }
+    article.host { padding: 4px 0 8px; border-top: 1px solid var(--line); }
+    article.host h3 { font-size: 18px; margin-top: 0; }
+    .role { font-size: 13px; font-weight: 500; color: var(--muted); margin: 0 0 8px; }
+    footer { padding: 8px 0 48px; color: var(--muted); font-size: 13px; }
+    footer h2 { color: var(--ink); }
     footer ol { padding-left: 1.2em; }
     footer li { margin: 0 0 6px; }
-    @media (max-width: 800px) {
-      .stats { grid-template-columns: 1fr 1fr; }
-      h1 { font-size: 28px; }
-      .row { grid-template-columns: 1fr; gap: 2px; }
-      table { display: block; overflow-x: auto; }
+    @media (max-width: 720px) {
+      header, main, footer { width: min(960px, calc(100% - 24px)); }
+      h1 { font-size: 26px; }
+      .summary { grid-template-columns: 1fr 1fr; }
+      .row { grid-template-columns: 6.5rem 1fr; gap: 8px; }
+      nav { flex-wrap: wrap; overflow: visible; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
     @media print {
-      nav { display: none; }
+      nav, .skip { display: none; }
       body { background: white; }
       section { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#scales">К содержанию</a>
   <header>
     <p class="meta">Fingular Malaysia · витрина AhaPay · срез 25 октября 2026, Europe/Moscow</p>
     <h1>Покрытие хостов и регистрация prepaid</h1>
     <p class="lede">Страница собирает покрытие пяти национальных сетей и правила, по которым человек оформляет малайзийский prepaid. Покрытие нужно, чтобы сравнить U Mobile и CelcomDigi до term sheet. Правила регистрации нужны, чтобы экран AhaPay запрашивал документы и согласие, которые требуют MCMC и потребительский кодекс.</p>
-    <nav>
+    <nav aria-label="Разделы страницы">
       <a href="#scales">Шкалы</a>
       <a href="#geo">География</a>
       <a href="#fiveg">5G</a>
@@ -100,12 +151,12 @@
     <section id="scales">
       <h2>Две шкалы покрытия</h2>
       <p>Операторы публикуют Coverage of Populated Areas, CoPA, по своей методике. Opensignal публикует Coverage Experience по одной шкале от 0 до 10 для всех пяти сетей. CoPA показывает, какую долю населённых районов оператор сам считает покрытой. Coverage Experience показывает, встречают ли абоненты сеть в населённых местах, где они живут и ездят. Эти числа стоят в одном отчёте и отвечают на разные вопросы.</p>
-      <div class="stats">
-        <div class="stat"><b>8,8</b><span>География CelcomDigi, шкала 0–10, июль 2026</span></div>
-        <div class="stat"><b>5,6</b><span>География U Mobile. Полгода назад было 5,5</span></div>
-        <div class="stat"><b>75,7%</b><span>Доля времени на 5G у U Mobile в Куала-Лумпуре</span></div>
-        <div class="stat"><b>90%</b><span>5G CoPA U Mobile, заявление компании от 6 октября 2026</span></div>
-      </div>
+      <dl class="summary">
+        <div><dt>8,8</dt><dd>География CelcomDigi, шкала 0–10, июль 2026</dd></div>
+        <div><dt>5,6</dt><dd>География U Mobile. Полгода назад было 5,5</dd></div>
+        <div><dt>75,7%</dt><dd>Доля времени на 5G у U Mobile в Куала-Лумпуре</dd></div>
+        <div><dt>90%</dt><dd>5G CoPA U Mobile, заявление компании от 6 октября 2026</dd></div>
+      </dl>
       <div class="callout">
         <p>В сборе Opensignal с 1 апреля по 29 июня 2026 все пять операторов получали 5G через DNB, поэтому балл покрытия 5G у всех равен 3,75. Opensignal пишет, что U Mobile завершил выход из DNB в июле 2026, после конца этого окна. Балл 3,75 относится к периоду общего доступа через DNB. Замер собственного контура ULTRA5G в это окно не попал.</p>
         <p>С ноября 2025 по июль 2026 географический балл U Mobile вырос с 5,5 до 5,6. CelcomDigi за тот же срок стоит на 8,8. Стройка ULTRA5G добавила скорость и долю времени на 5G внутри уже населённого контура.</p>
@@ -152,8 +203,9 @@
     <section id="kl">
       <h2>Опыт в Куала-Лумпуре</h2>
       <p>В городе запуска большая тройка держит надёжность в коридоре 900–912 баллов из 1000. Качество типичных приложений у CelcomDigi и U Mobile совпадает, 76,4% тестов. Yes дольше всех держит телефон на сигнале и при этом отстаёт по качеству приложений и по отдаче.</p>
-      <table>
-        <caption class="note">Куала-Лумпур, Opensignal, сбор 1 апреля — 29 июня 2026. Reliability — шкала от 100 до 1000.</caption>
+      <div class="table-scroll" tabindex="0" aria-label="Таблица опыта в Куала-Лумпуре, прокручивается вбок">
+      <table class="metrics">
+        <caption>Куала-Лумпур, Opensignal, сбор 1 апреля — 29 июня 2026. Reliability — шкала от 100 до 1000. На узком экране таблицу можно прокрутить вбок.</caption>
         <thead>
           <tr><th>Метрика</th><th>CelcomDigi</th><th>Maxis</th><th>U Mobile</th><th>Unifi</th><th>Yes</th></tr>
         </thead>
@@ -168,6 +220,7 @@
           <tr><td>Reliability, баллы</td><td>912</td><td>900</td><td>906</td><td>899</td><td>858</td></tr>
         </tbody>
       </table>
+      </div>
       <p>В Селангоре за тот же сбор время на 5G составляет 71,9% у U Mobile, 61,2% у Yes, 58,2% у Maxis, 56,6% у CelcomDigi и 53,7% у Unifi. Скачивание на 5G: U Mobile 273,6 Мбит/с, Unifi 212,5, Maxis 194,5, Yes 193,9, CelcomDigi 180,6. Качество приложений: CelcomDigi 75,6% и U Mobile 75,0%.</p>
     </section>
 
@@ -240,7 +293,9 @@
       <p>Правила задаёт Commission Determination on the Mandatory Standards for the Registration of End-Users of Prepaid Public Cellular Services, Determination No. 1 of 2026. MCMC зарегистрировал его 26 февраля 2026. Состав ниже взят из FAQ MCMC к этому определению и из отчёта public inquiry от 27 января 2026. PDF определения построчно здесь не цитируется. В отчёте inquiry комиссия закладывала шесть месяцев на подготовку операторов с даты выпуска. Стандарт относится к prepaid. Отдельного стандарта регистрации postpaid 2026 года в этом срезе нет.</p>
       <h3>Какие документы приносит человек</h3>
       <p>Нужен оригинал документа. Копия, фотография и принесённый скан вместо документа регистрацию не проходят. Человек оформляет линию сам. За взрослого это не делает другой человек. Ребёнка младше 12 лет зарегистрировать нельзя. В возрасте 12–17 лет линию оформляет родитель или опекун, ребёнок присутствует, пользователем в записи остаётся ребёнок. Приложение AhaPay отмечено 18+, поэтому детский контур в витрину не входит.</p>
-      <table>
+      <div class="table-scroll" tabindex="0" aria-label="Документы для регистрации, прокручивается вбок">
+      <table class="docs">
+        <caption>На узком экране таблицу можно прокрутить вбок.</caption>
         <thead><tr><th>Кто</th><th>Оригинал документа</th></tr></thead>
         <tbody>
           <tr><td>Гражданин Малайзии</td><td>MyKad или MyTentera</td></tr>
@@ -252,6 +307,7 @@
           <tr><td>Держатель документа беженца</td><td>Оригинал Dokumen Pendaftaran Pelarian</td></tr>
         </tbody>
       </table>
+      </div>
       <h3>Как проходит проверка</h3>
       <p>В салоне или у уполномоченного дилера гражданин, постоянный и временный резидент проходят считыватель MyKad и биометрию по отпечатку. Если отпечаток снять нельзя по медицинской причине, отчёт inquiry допускает сведения с чипа документа, заверенные Национальным регистрационным департаментом. Иностранец проходит считыватель паспорта и биометрию по лицу. Самостоятельную регистрацию иностранца комиссия на этом этапе не разрешает.</p>
       <p>Самостоятельная регистрация в FAQ описана как сканирование документа и проверка личности через MyDigital ID. В отчёте inquiry она выполняется только на официальной платформе оператора. Дилер в киоске помогает пройти шаги на экране. Проверку личности выполняет MyDigital ID или считыватель документа. Снимок документа хранится и после салонной, и после самостоятельной регистрации. Копия помечается водяным знаком и для другой регистрации не используется.</p>
